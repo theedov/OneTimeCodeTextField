@@ -18,7 +18,7 @@ public class OneTimeCodeTextField: UITextField {
     // MARK: Completions
     public var didReceiveCode: ((String) -> Void)?
     
-    // MARK: Customizations
+    // MARK: Customisations
     /// Needs to be called after `configure()`.
     /// Default value: `.secondarySystemBackground`
     public var codeBackgroundColor: UIColor = .secondarySystemBackground {
@@ -29,7 +29,7 @@ public class OneTimeCodeTextField: UITextField {
     
     /// Needs to be called after `configure()`.
     /// Default value: `.black`
-    public var codeTextColor: UIColor = .black {
+    public var codeTextColor: UIColor = .label {
         didSet {
             digitLabels.forEach({ $0.textColor = codeTextColor })
         }
@@ -64,6 +64,22 @@ public class OneTimeCodeTextField: UITextField {
     public var codeCornerCurve: CALayerCornerCurve = .continuous {
         didSet {
             digitLabels.forEach({ $0.layer.cornerCurve = codeCornerCurve })
+        }
+    }
+    
+    /// Needs to be called after `configure()`.
+    /// Default value: 0
+    public var codeBorderWidth: CGFloat = 0 {
+        didSet {
+            digitLabels.forEach({ $0.layer.borderWidth = codeBorderWidth })
+        }
+    }
+    
+    /// Needs to be called after `configure()`.
+    /// Default value: 0
+    public var codeBorderColor: UIColor? = .none {
+        didSet {
+            digitLabels.forEach({ $0.layer.borderColor = codeBorderColor?.cgColor })
         }
     }
         
@@ -127,9 +143,13 @@ public class OneTimeCodeTextField: UITextField {
         label.minimumScaleFactor = 0.8
         label.textColor = codeTextColor
         label.backgroundColor = codeBackgroundColor
+        
         label.layer.masksToBounds = true
         label.layer.cornerRadius = codeCornerRadius
         label.layer.cornerCurve = codeCornerCurve
+        
+        label.layer.borderWidth = codeBorderWidth
+        label.layer.borderColor = codeBorderColor?.cgColor
         
         return label
     }

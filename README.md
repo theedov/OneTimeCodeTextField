@@ -1,6 +1,6 @@
 # OneTimeCodeTextField
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/30866972/128621686-4fa4b27a-92ce-42c8-a121-94d098288dca.jpeg" width="200"> 
+    <img src="https://user-images.githubusercontent.com/30866972/128622571-7f0a3c38-cd0f-465c-8efa-71866f55f6a9.jpeg" width="200"> 
   </p>
 
 ### Example configuration
@@ -15,16 +15,19 @@ class ViewController: UIViewController {
         // Configure has to be called first
         codeTxt.configure(withSlotCount: 6, andSpacing: 8)              // Default: 6 slots, 8 spacing
         
-        // Customization(Optional)
-        codeTxt.codeBackgroundColor = .systemIndigo                     // Default: .secondarySystemBackground
-        codeTxt.codeTextColor = .white                                  // Default: .black
+        // Customisation(Optional)
+        codeTxt.codeBackgroundColor = .secondarySystemBackground        // Default: .secondarySystemBackground
+        codeTxt.codeTextColor = .label                                  // Default: .label
         codeTxt.codeFont = .systemFont(ofSize: 30, weight: .black)      // Default: .system(ofSize: 24)
         codeTxt.codeMinimumScaleFactor = 0.2                            // Default: 0.8
-        codeTxt.codeCornerRadius = 2                                    // Default: 8
+        
+        codeTxt.codeCornerRadius = 12                                   // Default: 8
         codeTxt.codeCornerCurve = .continuous                           // Default: .continuous
-        
-        
 
+        codeTxt.codeBorderWidth = 1                                     // Default: 0
+        codeTxt.codeBorderColor = .label                                // Default: .none
+        
+        
         codeTxt.didReceiveCode = { code in
             print(code)
         }
