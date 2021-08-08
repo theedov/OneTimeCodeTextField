@@ -27,10 +27,13 @@ class ViewController: UIViewController {
         codeTxt.codeBorderWidth = 1                                     // Default: 0
         codeTxt.codeBorderColor = .label                                // Default: .none
         
-        
+        // Get entered Passcode
         codeTxt.didReceiveCode = { code in
             print(code)
         }
+
+        // Clear textfield
+        codeTxt.clear()
     }
 }
 ```
