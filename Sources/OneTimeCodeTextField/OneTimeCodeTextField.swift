@@ -28,7 +28,7 @@ public class OneTimeCodeTextField: UITextField {
     }
     
     /// Needs to be called after `configure()`.
-    /// Default value: `.black`
+    /// Default value: `.label`
     public var codeTextColor: UIColor = .label {
         didSet {
             digitLabels.forEach({ $0.textColor = codeTextColor })
@@ -76,7 +76,7 @@ public class OneTimeCodeTextField: UITextField {
     }
     
     /// Needs to be called after `configure()`.
-    /// Default value: 0
+    /// Default value: `.none`
     public var codeBorderColor: UIColor? = .none {
         didSet {
             digitLabels.forEach({ $0.layer.borderColor = codeBorderColor?.cgColor })
