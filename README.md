@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Configure has to be called first
-        codeTxt.configure(with: 6)                                      // Default: 6 slots
+        codeTxt.configure(withSlotCount: 6, andSpacing: 8)              // Default: 6 slots, 8 spacing
         
         // Customization(Optional)
         codeTxt.codeBackgroundColor = .systemIndigo                     // Default: .secondarySystemBackground

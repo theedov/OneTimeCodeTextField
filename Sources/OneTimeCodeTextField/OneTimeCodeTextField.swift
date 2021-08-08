@@ -19,7 +19,6 @@ public class OneTimeCodeTextField: UITextField {
     public var didReceiveCode: ((String) -> Void)?
     
     // MARK: Customizations
-    
     /// Needs to be called after `configure()`.
     /// Default value: `.secondarySystemBackground`
     public var codeBackgroundColor: UIColor = .secondarySystemBackground {
@@ -69,12 +68,12 @@ public class OneTimeCodeTextField: UITextField {
     }
         
     // MARK: Configuration
-    public func configure(with slotCount: Int = 6) {
+    public func configure(withSlotCount slotCount: Int = 6, andSpacing spacing: CGFloat = 8) {
         guard isConfigured == false else { return }
         isConfigured = true
         configureTextField()
         
-        let slotsStackView = generateSlotsStackView(with: slotCount)
+        let slotsStackView = generateSlotsStackView(with: slotCount, spacing: spacing)
         addSubview(slotsStackView)
         addGestureRecognizer(tapGestureRecognizer)
         
@@ -100,13 +99,13 @@ public class OneTimeCodeTextField: UITextField {
         becomeFirstResponder()
     }
     
-    private func generateSlotsStackView(with count: Int) -> UIStackView {
+    private func generateSlotsStackView(with count: Int, spacing: CGFloat) -> UIStackView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = 8
+        stackView.spacing = spacing
         
         for _ in 0..<count {
             let slotLabel = generateSlotLabel()
