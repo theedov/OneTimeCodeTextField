@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         // Configure has to be called first
         codeTxt.configure(with: 6)                                      // Default: 6 slots
