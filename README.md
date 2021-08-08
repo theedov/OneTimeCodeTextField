@@ -14,15 +14,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Configure has to be called first
-        codeTxt.configure(with: 6)
+        codeTxt.configure(with: 6)                                      // Default: 6 slots
         
         // Customization(Optional)
-        codeTxt.codeBackgroundColor = .systemIndigo
-        codeTxt.codeTextColor = .white
-        codeTxt.codeFont = .systemFont(ofSize: 30, weight: .black)
-        codeTxt.codeMinimumScaleFactor = 0.2
-        codeTxt.codeCornerRadius = 2
-        codeTxt.codeCornerCurve = .continuous
+        codeTxt.codeBackgroundColor = .systemIndigo                     // Default: .secondarySystemBackground
+        codeTxt.codeTextColor = .white                                  // Default: .black
+        codeTxt.codeFont = .systemFont(ofSize: 30, weight: .black)      // Default: .system(ofSize: 24)
+        codeTxt.codeMinimumScaleFactor = 0.2                            // Default: 0.8
+        codeTxt.codeCornerRadius = 2                                    // Default: 8
+        codeTxt.codeCornerCurve = .continuous                           // Default: .continuous
         
         
 
