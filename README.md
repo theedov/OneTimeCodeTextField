@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         // Configure has to be called first
         codeTxt.configure(with: 6)
         
-        // Customization
+        // Customization(Optional)
         codeTxt.codeBackgroundColor = .systemIndigo
         codeTxt.codeTextColor = .white
         codeTxt.codeFont = .systemFont(ofSize: 30, weight: .black)
