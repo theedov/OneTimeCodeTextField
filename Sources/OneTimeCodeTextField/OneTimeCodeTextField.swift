@@ -5,7 +5,7 @@ public class OneTimeCodeTextField: UITextField {
     private(set) var digitLabels = [UILabel]()
     
     // MARK: Delegates
-    private lazy var oneTimeCodeDelegate = OneTimeCodeTextFieldDelegate(oneTimeCodeTextField: self)
+    public lazy var oneTimeCodeDelegate = OneTimeCodeTextFieldDelegate(oneTimeCodeTextField: self)
     
     // MARK: Properties
     private var isConfigured = false
