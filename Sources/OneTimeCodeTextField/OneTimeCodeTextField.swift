@@ -2,7 +2,7 @@ import UIKit
 
 public class OneTimeCodeTextField: UITextField {
     // MARK: UI Components
-    private(set) var digitLabels = [UILabel]()
+    public var digitLabels = [UILabel]()
     
     // MARK: Delegates
     public lazy var oneTimeCodeDelegate = OneTimeCodeTextFieldDelegate(oneTimeCodeTextField: self)
@@ -163,7 +163,7 @@ public class OneTimeCodeTextField: UITextField {
             
             if i < code.count {
                 let index = code.index(code.startIndex, offsetBy: i)
-                currentLabel.text = String(code[index])
+                currentLabel.text = String(code[index]).uppercased()
             } else {
                 currentLabel.text?.removeAll()
             }
