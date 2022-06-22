@@ -28,9 +28,10 @@ class ViewController: UIViewController {
         codeTxt.codeBorderWidth = 1                                     // Default: 0
         codeTxt.codeBorderColor = .label                                // Default: .none
         
-        // Allow alphanumeric code
+        // Allow none-numeric code
         codeTxt.oneTimeCodeDelegate.allowedCharacters = .alphanumerics  // Default: .decimalDigits
-        //You should also specify which corresponding keyboard should be shown, like
+        
+        //You should also specify which corresponding keyboard should be shown
         codeTxt.keyboardType = .asciiCapable                            // Default: .numberPad
         
         // Get entered Passcode

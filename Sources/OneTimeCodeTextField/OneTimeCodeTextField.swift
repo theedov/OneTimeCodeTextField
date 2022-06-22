@@ -2,7 +2,7 @@ import UIKit
 
 public class OneTimeCodeTextField: UITextField {
     // MARK: UI Components
-    private(set) var digitLabels = [UILabel]()
+    public var digitLabels = [UILabel]()
     
     // MARK: Delegates
     public lazy var oneTimeCodeDelegate = OneTimeCodeTextFieldDelegate(oneTimeCodeTextField: self)
