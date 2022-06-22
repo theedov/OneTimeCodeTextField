@@ -163,7 +163,7 @@ public class OneTimeCodeTextField: UITextField {
             
             if i < code.count {
                 let index = code.index(code.startIndex, offsetBy: i)
-                currentLabel.text = String(code[index])
+                currentLabel.text = String(code[index]).uppercased()
             } else {
                 currentLabel.text?.removeAll()
             }
